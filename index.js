@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const URL_TO_OPEN = 'https://youtu.be/GHfpGqxF1a4'; 
+const URL_TO_OPEN = 'https://youtu.be/GHfpGqxF1a4';
 const DELAY_BEFORE_CLICK_MS = 10000;
 const DELAY_AFTER_CLICK_MS = 100000;
 
@@ -9,7 +9,10 @@ const DELAY_AFTER_CLICK_MS = 100000;
     let isRunning = true;
 
     while (isRunning) {
-      const browser = await puppeteer.launch({ headless: false }); // Mở trình duyệt Chrome
+      const browser = await puppeteer.launch({
+        headless: false,
+        executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' 
+      });
       const page = await browser.newPage();
 
       // Mở liên kết
